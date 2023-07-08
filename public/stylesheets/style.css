@@ -2,7 +2,23 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+td {
+  text-align: center;
+  padding: 4px;
+}
 a {
   color: #00B7FF;
 }
+td a {
+  color: #00B7FF;
+  padding: 4px;
+  border-radius: 30%;
+  background-color: rgb(2, 2, 3);
+}
+form {
+  padding: 4px;
+}
+/* label {
+  padding: 4px;
+  margin: 5px auto;
+} */

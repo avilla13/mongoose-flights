@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<h2><%= title %></h2>
+<form action="/flights/<%- flight._id %>" method="GET">
+    <label>Airline:
+        <div><%= flight.airline  %></div>
+    </label><br>
+
+    <label>Airport: 
+        <div><%= flight.airport  %></div>
+    </label><br>
+
+    <label>Flight No:
+        <div><%= flight.flightNo  %></div>
+    </label><br>
+    
+    <label>Departs:
+        <div><%= flight.departs  %></div>
+    </label><br>
+</form>
+
+
+<%- include('../partials/footer') %>
