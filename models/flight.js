@@ -3,6 +3,25 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
+const destinationSchema = new Schema({
+    // name: {
+    //     type: String,
+    //     required: true
+    // },
+    airport: {
+        type: String,
+        enum: ['ORD', 'DFW', 'LAX', 'SAN'],
+        default: 'ORD',
+        required: true
+    },
+    arrival: {
+        type: Date
+     
+    }
+}, {
+    timestamps: true
+});
+
 const flightSchema = new Schema({
     airline: {
         type: String,
@@ -27,12 +46,14 @@ const flightSchema = new Schema({
          const oneYearFromCreated = new Date();
          oneYearFromCreated.setFullYear(oneYearFromCreated.getFullYear() + 1);
          return oneYearFromCreated;
-        }
-            
-    }
+        }  
+    },
+    destinations: [destinationSchema]
 }, {
     timestamps: true
 });
+
+
 
 // Compile schema into a model to export it
 module.exports = mongoose.model('Flight', flightSchema);

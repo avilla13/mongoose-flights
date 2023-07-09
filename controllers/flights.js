@@ -32,5 +32,6 @@ async function create(req, res) {
 }
 
 function newFlight(req, res) {
-    res.render('flights/new', {title: 'Add Flight', errorMsg: ''});
+    const flight= new Flight(); // create a new Flight object
+    res.render('flights/new', {title: 'Add Flight', errorMsg: '', flight});
 }
