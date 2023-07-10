@@ -63,5 +63,34 @@
     <h5>No Destinations Yet</h5>
   <% } %>
 
+  <br><br><h2>Tickets</h2>
+  <form action="/flights/<%- flight._id %>/tickets/new" method="GET">
+    <button type="submit">ADD TICKET</button>
+  </form>
 
+  <% if (ticket.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Seat</th>
+          <th>Price</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Yes, we can define variables! -->
+        
+        <% ticket.forEach(function(t) { %>
+          <tr>
+            <!-- .toLocaleDateString() provides a more friendly date format -->
+            <td><%= t.seat %></td>
+            <td><%= t.price %></td>
+        
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Tickets Yet</h5>
+  <% } %>
 <%- include('../partials/footer') %>

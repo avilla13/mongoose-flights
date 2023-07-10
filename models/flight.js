@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
+
 const destinationSchema = new Schema({
     // name: {
     //     type: String,
@@ -48,6 +49,7 @@ const flightSchema = new Schema({
          return oneYearFromCreated;
         }  
     },
+    
     destinations: [destinationSchema]
 }, {
     timestamps: true
